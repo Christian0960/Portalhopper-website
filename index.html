@@ -5,30 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portalhopper</title>
   <style>
+    /* Import a retro pixel-ish font */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      color: #222;
+      font-family: 'Press Start 2P', monospace;
+      background-color: #000;
+      color: f7f7f7;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: 100vh;
       text-align: center;
-    }
-
-    header {
       padding: 2rem;
     }
 
+    header {
+      max-width: 600px;
+    }
+
+    /* Logo placeholder */
+    .logo-placeholder {
+      width: 200px;
+      height: 100px;
+      background-color: #ddd;
+      display: block;
+      margin: 0 auto 2rem auto;
+      border: 2px solid #000;
+      font-size: 0.8rem;
+      line-height: 100px;
+      color: #000;
+      text-align: center;
+    }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       margin-bottom: 2rem;
     }
 
@@ -36,43 +54,48 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 2rem;
     }
 
     input[type="text"], input[type="email"] {
       padding: 0.5rem;
       margin-bottom: 1rem;
-      font-size: 1rem;
+      font-size: 0.7rem;
       width: 250px;
+      border: 2px solid #000;
+      background-color: #fff;
     }
 
     button {
-      padding: 0.7rem 1.5rem;
-      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.7rem;
       cursor: pointer;
-      background-color: #2d89ff;
-      color: white;
-      border: none;
-      border-radius: 5px;
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #000;
     }
 
     .cat-photo {
       margin-top: 2rem;
-      max-width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      max-width: 150px;
+      border: 2px solid #000;
     }
 
     footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
+      margin-top: auto;
+      font-size: 0.6rem;
       color: #555;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Pardon our mess, we'll be back soon. Bigger, and better than before!</h1>
+    <!-- Logo placeholder -->
+    <div class="PRTLHPPRLOGO.PNG">LOGO</div>
+
+    <h1>Pardon our mess, we'll be back soon.<br>Bigger, and better than before!</h1>
     <p>Portalhopper is in development. Sign up to get seasonal updates on the game's progress!</p>
 
     <form>
@@ -86,9 +109,8 @@
   </header>
 
   <footer>
-    &copy; 2026 CD Productions. No spam. One seasonal update per quarter. Unsubscribe anytime.
+    2026 CD Productions. One seasonal update per quarter. Unsubscribe anytime.
   </footer>
 
 </body>
 </html>
-
