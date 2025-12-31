@@ -11,8 +11,8 @@
     body {
       margin: 0;
       font-family: 'Press Start 2P', monospace;
-      background-color: #000;
-      color: f7f7f7;
+      background-color: #000; /* black background */
+      color: #f7f7f7; /* light text */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -33,7 +33,7 @@
       background-color: #ddd;
       display: block;
       margin: 0 auto 2rem auto;
-      border: 2px solid #000;
+      border: 2px solid #fff;
       font-size: 0.8rem;
       line-height: 100px;
       color: #000;
@@ -62,29 +62,30 @@
       margin-bottom: 1rem;
       font-size: 0.7rem;
       width: 250px;
-      border: 2px solid #000;
-      background-color: #fff;
+      border: 2px solid #fff;
+      background-color: #000;
+      color: #fff;
     }
 
     button {
       padding: 0.5rem 1rem;
       font-size: 0.7rem;
       cursor: pointer;
-      background-color: #000;
-      color: #fff;
-      border: 2px solid #000;
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #fff;
     }
 
     .cat-photo {
       margin-top: 2rem;
       max-width: 150px;
-      border: 2px solid #000;
+      border: 2px solid #fff;
     }
 
     footer {
       margin-top: auto;
       font-size: 0.6rem;
-      color: #555;
+      color: #aaa;
       margin-bottom: 1rem;
     }
   </style>
@@ -93,7 +94,7 @@
 
   <header>
     <!-- Logo placeholder -->
-    <div class="PRTLHPPRLOGO.PNG">LOGO</div>
+    <div class="PRTLHPPRLOGO.png">LOGO</div>
 
     <h1>Pardon our mess, we'll be back soon.<br>Bigger, and better than before!</h1>
     <p>Portalhopper is in development. Sign up to get seasonal updates on the game's progress!</p>
@@ -105,7 +106,7 @@
     </form>
 
     <!-- Placeholder for Snowball's seasonal photo -->
-    <img class="cat-photo" src="snowball_placeholder.jpg" alt="Snowball the cat">
+    <img class="cat-photo" src="snowball_placeholder.jpg" alt="photo here">
   </header>
 
   <footer>
