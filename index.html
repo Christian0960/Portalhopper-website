@@ -1,1 +1,94 @@
-<h1>Pardon our mess, we'll be back soon. Bigger, and better than before!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portalhopper</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="text"], input[type="email"] {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      width: 250px;
+    }
+
+    button {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #2d89ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .cat-photo {
+      margin-top: 2rem;
+      max-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Pardon our mess, we'll be back soon. Bigger, and better than before!</h1>
+    <p>Portalhopper is in development. Sign up to get seasonal updates on the game's progress!</p>
+
+    <form>
+      <input type="text" name="name" placeholder="Your Name (optional)">
+      <input type="email" name="email" placeholder="Your Email" required>
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- Placeholder for Snowball's seasonal photo -->
+    <img class="cat-photo" src="snowball_placeholder.jpg" alt="Snowball the cat">
+  </header>
+
+  <footer>
+    &copy; 2026 CD Productions. No spam. One seasonal update per quarter. Unsubscribe anytime.
+  </footer>
+
+</body>
+</html>
+
