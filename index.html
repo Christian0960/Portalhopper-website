@@ -19,7 +19,7 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            padding-top: 4rem; /* space for sticky nav */
+            padding-top: 5rem; /* space for sticky nav */
         }
 
         /* STICKY TOP NAVIGATION */
@@ -28,39 +28,35 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #000;
+            background-color: #555; /* grey background */
             border-bottom: 2px solid #fff;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* center nav items */
             align-items: center;
-            padding: 0.8rem 2rem;
+            gap: 4rem; /* spacing between items */
+            padding: 0.8rem 0;
             z-index: 1000;
+        }
+
+        nav a, nav .download-button {
+            font-size: 0.8rem;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
         }
 
         nav a {
             color: #ffff00;
-            text-decoration: none;
-            font-size: 0.8rem;
-            margin: 0 0.5rem;
         }
 
         nav a:hover {
             color: #aca4ff;
         }
 
-        nav .nav-left, nav .nav-right {
-            display: flex;
-            align-items: center;
-        }
-
         nav .download-button {
             background-color: #fff;
             color: #000;
             border: 2px solid #fff;
-            padding: 0.4rem 0.8rem;
-            font-size: 0.7rem;
-            cursor: pointer;
-            margin-left: 1rem;
         }
 
         nav .download-button:hover {
@@ -204,14 +200,12 @@
 
     </style>
 </head>
-
 <body>
 
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-left">
-            <a href="#home">Home</a>
-            <a href="#Demo">Download the demo</a>
+        <a href="#home">Home</a>
+        <a href="PortalhopperDemo.zip" class="download-button">Download Demo</a>
     </nav>
 
     <header id="home">
@@ -249,6 +243,9 @@
                 </iframe>
             </div>
         </div>
+
+        <!-- GAMEJOLT WIDGET -->
+        <iframe src="https://widgets.gamejolt.com/package/v1?key=qivJx2Wm" frameborder="0" width="500" height="150"></iframe>
 
         <p>
             Portalhopper is still in active development.<br>
