@@ -19,16 +19,15 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            padding-top: 5rem; /* space for sticky nav */
+            padding-top: 5rem;
         }
 
-        /* STICKY TOP NAVIGATION */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #555; /* grey nav */
+            background-color: #555;
             border-bottom: 2px solid #fff;
             display: flex;
             justify-content: center;
@@ -38,14 +37,10 @@
             z-index: 1000;
         }
 
-        nav a, nav .download-button {
+        nav a {
             font-size: 0.8rem;
             text-decoration: none;
             padding: 0.4rem 0.8rem;
-            cursor: pointer;
-        }
-
-        nav a {
             color: #ffff00;
         }
 
@@ -53,23 +48,11 @@
             color: #aca4ff;
         }
 
-        nav .download-button {
-            background-color: #fff;
-            color: #000;
-            border: 2px solid #fff;
-        }
-
-        nav .download-button:hover {
-            background-color: #aca4ff;
-            color: #000;
-        }
-
         header {
             max-width: 1000px;
             width: 100%;
         }
 
-        /* LOGO */
         .logo {
             max-width: 420px;
             width: 100%;
@@ -128,9 +111,9 @@
             color: #aaa;
             margin-top: 3rem;
         }
-
     </style>
 </head>
+
 <body>
 
     <!-- NAVIGATION -->
@@ -141,15 +124,24 @@
 
     <header>
 
-        <!-- LOGO -->
         <img class="logo" src="PRTLHPPRLOGO.png" alt="Portalhopper Logo">
 
-        <h1>Download Portalhopper Demo - Windows</h1>
+        <h1>Download Portalhopper Demo — Windows</h1>
 
         <div class="download-section">
             <h2>Windows Build</h2>
-            <p>This is the official Windows demo of Portalhopper. Click below to download the demo and build your own opinion on the game.</p>
-            <a href="PortalhopperDemoWindows.zip" class="download-btn" download>Download Demo (Windows)</a>
+            <p>
+                This is the official Windows demo of Portalhopper.
+                Click below to download the demo directly from the website.
+            </p>
+
+            <a
+              href="https://pub-91a9abbfac8e4e6d96cfd11e80c33773.r2.dev/PORTALHOPPERD1.1%20(2).zip"
+              class="download-btn"
+              download
+            >
+              Download Demo (Windows · v1.1 · ~40MB)
+            </a>
         </div>
 
         <div class="download-section">
