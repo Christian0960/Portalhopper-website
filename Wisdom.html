@@ -18,8 +18,8 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            text-align: center;
             padding-top: 5rem;
+            text-align: center;
         }
 
         nav {
@@ -51,6 +51,7 @@
             width: 100%;
         }
 
+        /* CLICK IMAGE */
         .click-image {
             margin: 3rem auto;
             width: 320px;
@@ -68,33 +69,62 @@
             color: #aaa;
         }
 
-        /* DIALOG BOX */
-        .dialog-box {
-            display: none;
+        /* GAME SCREEN */
+        .game-wrapper {
             position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 800px;
-            background-color: #000;
-            border-top: 3px solid #fff;
-            padding: 1rem;
+            bottom: 1rem;
+            width: 320px;
+            height: 180px;
+            display: none;
         }
 
-        .dialog-inner {
+        /* DIALOG BOX */
+        .dialog-outer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        .border-1 {
+            background: #000;
+            border-top: 3px solid #fff;
+        }
+
+        .border-2 {
+            margin: 3px;
             border: 2px solid #fff;
-            padding: 1rem;
-            text-align: left;
-            font-size: 0.7rem;
+            background: #000;
+        }
+
+        .border-3 {
+            margin: 3px;
+            border: 2px solid #000;
+            background: #000;
+            display: flex;
+            padding: 8px;
+        }
+
+        .portrait {
+            width: 64px;
+            height: 64px;
+            background: #111;
+            border: 2px solid #fff;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .dialog-text {
+            font-size: 10px;
             line-height: 1.6;
+            white-space: pre-wrap;
         }
 
         .prompt {
-            margin-top: 0.5rem;
-            font-size: 0.6rem;
+            font-size: 8px;
             color: #aca4ff;
             text-align: right;
+            margin-top: 4px;
         }
 
         footer {
@@ -108,73 +138,110 @@
 
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Demo.html">Download Demo</a>
-    </nav>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Demo.html">Download Demo</a>
+    <a href="Wisdom.html">Wisdom</a>
+</nav>
 
-    <header>
-        <h1>you probably should not click this</h1>
+<header>
+    <h1>you probably should not click this</h1>
 
-        <!-- IMAGE PLACEHOLDER -->
-        <div class="click-image" onclick="startDialog()">
-            <span>[ click me ]</span>
-        </div>
-    </header>
-
-    <!-- DIALOG -->
-    <div class="dialog-box" id="dialogBox">
-        <div class="dialog-inner" id="dialogText"></div>
-        <div class="prompt">[ press enter ]</div>
+    <div class="click-image" onclick="startDialog()">
+        <span>[ click me ]</span>
     </div>
+</header>
 
-    <footer>
-        2026 CD Productions · hi how are you today
-    </footer>
+<!-- GAME / DIALOG -->
+<div class="game-wrapper" id="game">
+    <div class="dialog-outer border-1">
+        <div class="border-2">
+            <div class="border-3">
+                <div class="portrait"></div>
+                <div>
+                    <div class="dialog-text" id="dialogText"></div>
+                    <div class="prompt" id="prompt">[ press enter ]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <script>
-        // FAKE PORTALHOPPER DIALOG
-        const dialog = [
-            "hi",
-            "my name is tortle",
-            "i am a digital avatar that represents the creator of this website.",
-            "he wanted me to tell you not to click random things.",
-            "but you clicked anyway.",
-            "thats on you.",
-            "anyway.",
-            "go play the demo."
-        ];
+<footer>
+    2026 CD Productions · hi how are you today
+</footer>
 
-        let dialogIndex = 0;
-        let active = false;
+<script>
+    // DIALOG DATA (mirrors current_dialog.message)
+    const dialog = [
+        "hi",
+        "my name is tortle",
+        "i am a digital avatar that represents the creator of this website",
+        "he wanted me to tell you not to click random things",
+        "but you clicked anyway",
+        "thats on you",
+        "anyway",
+        "go play the demo"
+    ];
 
-        function startDialog() {
-            dialogIndex = 0;
-            active = true;
-            document.getElementById("dialogBox").style.display = "block";
-            updateDialog();
+    let index = 0;
+    let charIndex = 0;
+    let typing = false;
+    let active = false;
+    let typedText = "";
+
+    function startDialog() {
+        index = 0;
+        charIndex = 0;
+        typedText = "";
+        active = true;
+        document.getElementById("game").style.display = "block";
+        document.getElementById("dialogText").textContent = "";
+        typeNextChar();
+    }
+
+    function typeNextChar() {
+        if (!active) return;
+
+        typing = true;
+        const message = dialog[index];
+
+        if (charIndex < message.length) {
+            typedText += message.charAt(charIndex);
+            document.getElementById("dialogText").textContent = typedText;
+            charIndex++;
+            setTimeout(typeNextChar, 30);
+        } else {
+            typing = false;
+        }
+    }
+
+    document.addEventListener("keydown", e => {
+        if (!active || e.key !== "Enter") return;
+
+        if (typing) {
+            // finish instantly
+            const message = dialog[index];
+            typedText = message;
+            document.getElementById("dialogText").textContent = typedText;
+            typing = false;
+            return;
         }
 
-        function updateDialog() {
-            document.getElementById("dialogText").textContent = dialog[dialogIndex];
+        index++;
+        if (index >= dialog.length) {
+            document.getElementById("game").style.display = "none";
+            active = false;
+            return;
         }
 
-        document.addEventListener("keydown", function (e) {
-            if (!active) return;
-
-            if (e.key === "Enter") {
-                dialogIndex++;
-
-                if (dialogIndex >= dialog.length) {
-                    document.getElementById("dialogBox").style.display = "none";
-                    active = false;
-                } else {
-                    updateDialog();
-                }
-            }
-        });
-    </script>
+        charIndex = 0;
+        typedText = "";
+        document.getElementById("dialogText").textContent = "";
+        typeNextChar();
+    });
+</script>
 
 </body>
 </html>
+
