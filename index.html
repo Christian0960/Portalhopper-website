@@ -1,264 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <link rel="icon" type="image/png" href="pixilart-drawing (23).ico">
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PORTALHOPPER</title>
+    <!-- Custom PreHead code is injected here -->
+    
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta charset="utf-8"/>
 
-    body {
-      margin: 0;
-      font-family: 'Press Start 2P', monospace;
-      background-color: #000;
-      color: #f7f7f7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 2rem;
-    }
+        <!-- Builtin injector for disabling cache -->
+        <meta http-equiv="pragma" content="no-cache"/>
 
-    header {
-      max-width: 1000px;
-      width: 100%;
-    }
+        <!-- Set the title bar of the page -->
+        <title>PORTALHOPPER</title>
 
-    /* LOGO */
-    .logo {
-      max-width: 420px;
-      width: 100%;
-      height: auto;
-      margin: 1rem auto 2rem auto;
-      display: block;
-    }
+        <!-- Custom PreStyle code is injected here -->
+        
 
-    h1 {
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-    }
+        <!-- Set the background colour of the document -->
+        <style>
+            body {
+                background: #0;
+                color: #cccccc;
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
 
-    p {
-      font-size: 0.85rem;
-      margin: 2.5rem 0;
-      line-height: 1.6;
-    }
+            canvas {
+                image-rendering: optimizeSpeed;
+                -webkit-interpolation-mode: nearest-neighbor;
+                -ms-touch-action: none;
+                touch-action: none;
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+            :-webkit-full-screen #canvas {
+                width: 100%;
+                height: 100%;
+            }
+            :-webkit-full-screen {
+                width: 100%;
+                height: 100%;
+            }
+            
+            /* Custom Runner Styles */
+            div.gm4html5_div_class {
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+            div.gm4html5_login {
+                padding: 20px;
+                position: absolute;
+                border: solid 2px #000000;
+                background-color: #404040;
+                color:#00ff00;
+                border-radius: 15px;
+                box-shadow: #101010 20px 20px 40px;
+            }
+            div.gm4html5_cancel_button {
+                float: right;
+            }
+            div.gm4html5_login_button {
+                float: left;
+            }
+            div.gm4html5_login_header {
+                text-align: center;
+            }
+            /* END - Custom Runner Styles */
+            
+        </style>
 
-    /* NEWS CAROUSEL */
-    .news-banner {
-      border: 2px solid #fff;
-      padding: 1.25rem;
-      margin: 2.5rem auto;
-      max-width: 760px;
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
+        <!-- Custom PostStyle code is injected here -->
+        
 
-    .news-content {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex: 1;
-    }
+        <!-- Builtin injector for injecting flurry analytics code -->
+        
+    </head>
 
-    .news-content img {
-      width: 96px;
-      height: 96px;
-      object-fit: cover;
-      border: 2px solid #fff;
-      flex-shrink: 0;
-    }
+    <!-- Custom PostHead code is injected here -->
+    
 
-    .news-text {
-      font-size: 0.75rem;
-      line-height: 1.6;
-      text-align: left;
-    }
+    <!-- Custom PreBody code is injected here -->
+    
 
-    .news-arrow {
-      background: none;
-      color: #fff;
-      border: none;
-      font-size: 1.4rem;
-      cursor: pointer;
-      width: 32px;
-    }
+    <body>
+        <!-- Custom BodyStart code is injected here -->
+        
 
-    .news-arrow:hover {
-      color: #aca4ff;
-    }
+        <div class="gm4html5_div_class" id="gm4html5_div_id">
+            
+            <!-- Builtin injector for splash screen -->
+            
 
-    /* FIND GAME */
-    .find-game {
-      margin: 2.5rem 0 3rem 0;
-    }
+            <!-- Custom PreCanvas code is injected here -->
+            
 
-    .find-game h2 {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      color: #ffff00;
-    }
-
-    .itch-wrapper {
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    /* FORM */
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 3rem;
-    }
-
-    input[type="text"],
-    input[type="email"] {
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      font-size: 0.7rem;
-      width: 260px;
-      border: 2px solid #fff;
-      background-color: #000;
-      color: #ffff00;
-    }
-
-    button {
-      padding: 0.5rem 1.2rem;
-      font-size: 0.7rem;
-      cursor: pointer;
-      background-color: #fff;
-      color: #000;
-      border: 2px solid #fff;
-    }
-
-    label {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      color: #ffff00;
-    }
-
-    /* SNOWBALL */
-    .cat-photo {
-      margin-top: 3rem;
-      max-width: 150px;
-      border: none;
-    }
-
-    footer {
-      margin-top: auto;
-      font-size: 0.6rem;
-      color: #aaa;
-      margin-top: 3rem;
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-
-    <!-- LOGO -->
-    <img class="logo" src="PRTLHPPRLOGO.png" alt="Portalhopper Logo">
-
-    <!-- NEWS -->
-    <div class="news-banner">
-      <button class="news-arrow" onclick="prevNews()">◀</button>
-
-      <div class="news-content">
-        <img id="news-image" src="PRTLHPPRMAINCAPSULE.png" alt="News image">
-        <div class="news-text" id="news-text">
-          <strong>NEWS:</strong><br>
-         Version 1.1 of the offical PORTALHOPPER Demo is now available on Itch.io!
+            <!-- Create the canvas element the game draws to -->
+            <canvas id="canvas" width="320" height="180" >
+                
+                <p>Your browser doesn't support HTML5 canvas.</p>
+            </canvas>
+            
+            <!-- Custom PostCanvas code is injected here -->
+            
         </div>
-      </div>
 
-      <button class="news-arrow" onclick="nextNews()">▶</button>
-    </div>
+        <!-- Run the game code -->
+        <script type="text/javascript" src="html5game/PORTALHOPPERD1.js?cachebust=1620930679"></script>
 
-    <!-- FIND GAME -->
-    <div class="find-game">
-      <h2>Find the game on</h2>
-      <div class="itch-wrapper">
-        <iframe
-          frameborder="0"
-          src="https://itch.io/embed/4046795?border_width=5&amp;bg_color=000000&amp;fg_color=aca4ff&amp;link_color=8fa9ff"
-          width="560"
-          height="175">
-          <a href="https://christiandunlap96.itch.io/portalhopper">
-            PORTALHOPPER [DEMO] by Arctics
-          </a>
-        </iframe>
-      </div>
-    </div>
+        <!-- Builtin injector for injecting runner path -->
+        
 
-<iframe src="https://widgets.gamejolt.com/package/v1?key=qivJx2Wm" frameborder="0" width="500" height="150"></iframe>
-      
-    <p>
-      Portalhopper is still in active development.<br>
-      Sign up to get seasonal updates on the game's progress!
-    </p>
+        <script>window.onload = GameMaker_Init;</script>
 
-    <!-- FORM -->
-<form
-  action="https://buttondown.com/api/emails/embed-subscribe/dunlap"
-  method="post"
-  class="embeddable-buttondown-form"
->
-  <label for="bd-email">Reveal Thy Email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="submit" value="Subscribe" />
-  <p>
-    <a href="https://buttondown.com/refer/dunlap" target="_blank">
-      Hi how are you today
-    </a>
-  </p>
-</form>
-    <!-- SNOWBALL -->
-    <img class="cat-photo" src="sprite-animation (1).gif" alt="Snowball">
+        <!-- Builtin injector for injecting google analytics code -->
+        
 
-  </header>
+        <!-- Custom BodyEnd code is injected here -->
+        
+    </body>
 
-  <footer>
-    2026 CD Productions · One seasonal update per quarter
-  </footer>
-
-  <!-- NEWS SCRIPT -->
-  <script>
-    const newsItems = [
-      {
-        image: "PRTLHPPRMAINCAPSULE.png",
-        text: "<strong>NEWS:</strong><br>Version 1.1 of the offical PORTALHOPPER Demo is now available on Itch.io!"
-      },
-      {
-        image: "(1).jpeg",
-        text: "<strong>NEWS:</strong><br>Seasonal newsletter sign-ups are now available!"
-      }
-    ];
-
-    let currentNews = 0;
-
-    function updateNews() {
-      document.getElementById("news-image").src = newsItems[currentNews].image;
-      document.getElementById("news-text").innerHTML = newsItems[currentNews].text;
-    }
-
-    function nextNews() {
-      currentNews = (currentNews + 1) % newsItems.length;
-      updateNews();
-    }
-
-    function prevNews() {
-      currentNews = (currentNews - 1 + newsItems.length) % newsItems.length;
-      updateNews();
-    }
-  </script>
-
-</body>
+    <!-- Custom PostBody code is injected here -->
+    
 </html>
