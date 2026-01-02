@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="pixilart-drawing (23).ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTALHOPPER - Windows Demo</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Press Start 2P', monospace;
+            background-color: #000;
+            color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 5rem; /* space for sticky nav */
+        }
+
+        /* STICKY TOP NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #555; /* grey nav */
+            border-bottom: 2px solid #fff;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            align-items: center;
+            padding: 0.8rem 0;
+            z-index: 1000;
+        }
+
+        nav a, nav .download-button {
+            font-size: 0.8rem;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
+        }
+
+        nav a {
+            color: #ffff00;
+        }
+
+        nav a:hover {
+            color: #aca4ff;
+        }
+
+        nav .download-button {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        nav .download-button:hover {
+            background-color: #aca4ff;
+            color: #000;
+        }
+
+        header {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* LOGO */
+        .logo {
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+            margin: 1rem auto 2rem auto;
+            display: block;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-size: 0.85rem;
+            margin: 2rem 0;
+            line-height: 1.6;
+        }
+
+        .download-section {
+            border: 2px solid #fff;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .download-section h2 {
+            font-size: 1rem;
+            color: #ffff00;
+        }
+
+        .download-btn {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: #000;
+            background-color: #fff;
+            border: 2px solid #fff;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .download-btn:hover {
+            background-color: #aca4ff;
+            color: #000;
+        }
+
+        footer {
+            margin-top: auto;
+            font-size: 0.6rem;
+            color: #aaa;
+            margin-top: 3rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Demo.html">Download Demo</a>
+    </nav>
+
+    <header>
+
+        <!-- LOGO -->
+        <img class="logo" src="PRTLHPPRLOGO.png" alt="Portalhopper Logo">
+
+        <h1>Download Portalhopper Demo - Windows</h1>
+
+        <div class="download-section">
+            <h2>Windows Build</h2>
+            <p>This is the official Windows demo of Portalhopper. Click below to download the demo and build your own opinion on the game.</p>
+            <a href="PortalhopperDemoWindows.zip" class="download-btn" download>Download Demo (Windows)</a>
+        </div>
+
+        <div class="download-section">
+            <h2>System Requirements</h2>
+            <p>
+                OS: Windows 10 or later<br>
+                RAM: 5,000 TB minimum<br>
+                Storage: 40MB free space<br>
+                Graphics: idk tbh
+            </p>
+        </div>
+
+    </header>
+
+    <footer>
+        2026 CD Productions · hi how are you today
+    </footer>
+
+</body>
+</html>
