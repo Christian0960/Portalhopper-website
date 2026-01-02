@@ -22,16 +22,6 @@
             text-align: center;
         }
 
-        .portrait {
-    width: 96px;
-    height: 96px;
-    background: url("tortle.png") center / contain no-repeat;
-    border: 2px solid #fff;
-    margin-right: 12px;
-    flex-shrink: 0;
-}
-
-
         nav {
             position: fixed;
             top: 0;
@@ -66,17 +56,16 @@
             margin: 3rem auto;
             width: 320px;
             height: 180px;
-            border: 2px solid #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            background-color: #111;
         }
 
-        .click-image span {
-            font-size: 0.7rem;
-            color: #aaa;
+        .click-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         /* GAME SCREEN (SCALED UP) */
@@ -85,8 +74,8 @@
             bottom: 1rem;
             left: 50%;
             transform: translateX(-50%);
-            width: 640px;
-            height: 240px;
+            width: 640px;   /* bigger width */
+            height: 240px;  /* bigger height */
             display: none;
         }
 
@@ -117,23 +106,24 @@
         }
 
         .portrait {
-            width: 96px;
-            height: 96px;
-            background: #111;
+            width: 128px;  /* bigger portrait */
+            height: 128px;
+            background: url("tortle.png") center / contain no-repeat; /* actual image */
             border: 2px solid #fff;
-            margin-right: 12px;
+            margin-right: 16px;
             flex-shrink: 0;
         }
 
         .dialog-text {
-            font-size: 12px;
-            line-height: 1.7;
+            font-size: 14px;  /* larger text */
+            line-height: 1.8;
             white-space: pre-wrap;
             max-width: 480px;
+            text-align: left;
         }
 
         .prompt {
-            font-size: 9px;
+            font-size: 10px;
             color: #aca4ff;
             text-align: right;
             margin-top: 6px;
@@ -159,10 +149,9 @@
 <header>
     <h1>you probably should not click this</h1>
 
-<div class="click-image" onclick="startDialog()">
-    <img src="tortle.png" alt="Tortle" style="width:100%; height:100%; object-fit:contain;">
-</div>
-
+    <div class="click-image" onclick="startDialog()">
+        <img src="tortle.png" alt="Tortle">
+    </div>
 </header>
 
 <!-- GAME / DIALOG -->
@@ -254,3 +243,4 @@
 
 </body>
 </html>
+
