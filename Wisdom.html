@@ -22,6 +22,16 @@
             text-align: center;
         }
 
+        .portrait {
+    width: 96px;
+    height: 96px;
+    background: url("tortle.png") center / contain no-repeat;
+    border: 2px solid #fff;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+
         nav {
             position: fixed;
             top: 0;
@@ -69,12 +79,14 @@
             color: #aaa;
         }
 
-        /* GAME SCREEN */
+        /* GAME SCREEN (SCALED UP) */
         .game-wrapper {
             position: fixed;
             bottom: 1rem;
-            width: 320px;
-            height: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 640px;
+            height: 240px;
             display: none;
         }
 
@@ -83,48 +95,48 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: auto;
         }
 
         .border-1 {
             background: #000;
-            border-top: 3px solid #fff;
+            border-top: 4px solid #fff;
         }
 
         .border-2 {
-            margin: 3px;
-            border: 2px solid #fff;
+            margin: 4px;
+            border: 3px solid #fff;
             background: #000;
         }
 
         .border-3 {
-            margin: 3px;
-            border: 2px solid #000;
+            margin: 4px;
+            border: 3px solid #000;
             background: #000;
             display: flex;
-            padding: 8px;
+            padding: 14px;
         }
 
         .portrait {
-            width: 64px;
-            height: 64px;
+            width: 96px;
+            height: 96px;
             background: #111;
             border: 2px solid #fff;
-            margin-right: 8px;
+            margin-right: 12px;
             flex-shrink: 0;
         }
 
         .dialog-text {
-            font-size: 10px;
-            line-height: 1.6;
+            font-size: 12px;
+            line-height: 1.7;
             white-space: pre-wrap;
+            max-width: 480px;
         }
 
         .prompt {
-            font-size: 8px;
+            font-size: 9px;
             color: #aca4ff;
             text-align: right;
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
         footer {
@@ -147,9 +159,10 @@
 <header>
     <h1>you probably should not click this</h1>
 
-    <div class="click-image" onclick="startDialog()">
-        <span>[ click me ]</span>
-    </div>
+<div class="click-image" onclick="startDialog()">
+    <img src="tortle.png" alt="Tortle" style="width:100%; height:100%; object-fit:contain;">
+</div>
+
 </header>
 
 <!-- GAME / DIALOG -->
@@ -160,7 +173,7 @@
                 <div class="portrait"></div>
                 <div>
                     <div class="dialog-text" id="dialogText"></div>
-                    <div class="prompt" id="prompt">[ press enter ]</div>
+                    <div class="prompt">[ press enter ]</div>
                 </div>
             </div>
         </div>
@@ -172,7 +185,6 @@
 </footer>
 
 <script>
-    // DIALOG DATA (mirrors current_dialog.message)
     const dialog = [
         "hi",
         "my name is tortle",
@@ -220,9 +232,7 @@
         if (!active || e.key !== "Enter") return;
 
         if (typing) {
-            // finish instantly
-            const message = dialog[index];
-            typedText = message;
+            typedText = dialog[index];
             document.getElementById("dialogText").textContent = typedText;
             typing = false;
             return;
@@ -244,4 +254,3 @@
 
 </body>
 </html>
-
