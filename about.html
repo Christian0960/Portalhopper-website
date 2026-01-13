@@ -9,119 +9,43 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-        body {
-            margin: 0;
-            font-family: 'Press Start 2P', monospace;
-            background-color: #000;
-            color: #f7f7f7;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding-top: 5rem; /* space for sticky nav */
-        }
+        body { margin:0; font-family:'Press Start 2P',monospace; background:#000; color:#f7f7f7; display:flex; flex-direction:column; align-items:center; min-height:100vh; text-align:center; padding-top:5rem; }
 
-        /* STICKY TOP NAVIGATION */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #555;
-            border-bottom: 2px solid #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4rem;
-            padding: 0.8rem 0;
-            z-index: 1000;
+            position: fixed; top:0; left:0; width:100%; background-color:#555; border-bottom:2px solid #fff; display:flex; justify-content:center; align-items:center; gap:4rem; padding:0.8rem 0; z-index:1000;
         }
+        nav a { font-size:0.8rem; text-decoration:none; padding:0.4rem 0.8rem; cursor:pointer; color:#ffff00; }
+        nav a:hover { color:#aca4ff; }
 
-        nav a {
-            font-size: 0.8rem;
-            text-decoration: none;
-            padding: 0.4rem 0.8rem;
-            cursor: pointer;
-            color: #ffff00;
-        }
+        header { max-width:1000px; width:100%; margin-top:2rem; }
+        h1 { font-size:1.4rem; margin-bottom:2rem; }
+        h2 { font-size:1rem; color:#ffff00; margin-bottom:1rem; }
+        p { font-size:0.85rem; margin:1.5rem 0; line-height:1.6; }
 
-        nav a:hover {
-            color: #aca4ff;
-        }
+        .section { border:2px solid #fff; padding:1.5rem; margin:2rem auto; max-width:800px; text-align:left; }
+        .screenshots { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem; }
+        .screenshots img { width:240px; height:135px; object-fit:cover; border:2px solid #fff; }
 
-        header {
-            max-width: 1000px;
-            width: 100%;
-            margin-top: 2rem;
-        }
-
-        h1 {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            font-size: 1rem;
-            color: #ffff00;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 0.85rem;
-            margin: 1.5rem 0;
-            line-height: 1.6;
-        }
-
-        .section {
-            border: 2px solid #fff;
-            padding: 1.5rem;
-            margin: 2rem auto;
-            max-width: 800px;
-            text-align: left;
-        }
-
-        .screenshots {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .screenshots img {
-            width: 240px;
-            height: 135px;
-            object-fit: cover;
-            border: 2px solid #fff;
-        }
-
-        footer {
-            margin-top: auto;
-            font-size: 0.6rem;
-            color: #aaa;
-            margin-bottom: 2rem;
-        }
+        footer { font-size:0.6rem; color:#aaa; margin-bottom:2rem; }
     </style>
 </head>
 <body>
 
     <!-- NAVIGATION -->
     <nav>
-        <a href="Index.html">Home</a>
-        <a href="Demo.html">Download Demo</a>
-        <a href="Wisdom.html">Wisdom</a
+        <a href="index.html">Home</a>
+        <a href="Demo.html">Download the demo</a>
+        <a href="Wisdom.html">Wisdom</a>
         <a href="About.html">About</a>
     </nav>
 
     <header>
         <h1>About PORTALHOPPER</h1>
 
-        <!-- Overview Section -->
         <div class="section" id="overview">
             <h2>Overview</h2>
             <p>
-               A "story-driven" 2D JRPG–platformer for PC about a lost squid navigating an unstable universe, guided by a mysterious voice and forced to confront fate, and the cost of breaking an endless cycle.
+                A "story-driven" 2D JRPG–platformer for PC about a lost squid navigating an unstable universe, guided by a mysterious voice and forced to confront fate, and the cost of breaking an endless cycle.
             </p>
             <div class="screenshots">
                 <img src="16902103474223710208_4.jpg" alt="Screenshot 1">
@@ -129,45 +53,23 @@
             </div>
         </div>
 
-        <!-- Gameplay Section -->
-<div class="section" id="gameplay">
-    <h2>Gameplay</h2>
-    <p>
-        Have you ever wanted a game where you do things, and more things happen? Introducing <strong>PORTALHOPPER</strong>, a 2D platformer with turn-based RPG battle mechanics. I call it a "PlatPG".
-    </p>
-    
-    <p>. . .</p>
-    
-    <p>I'm joking, by the way.</p>
-    
-    <p>. . .</p>
-    
-    <p>
-        But that's not all! The game also has crazy, silly, wacky, goofy, haha, funny, lol, rofl characters you can conversate with!  
-        On top of that, I made what I actually call a "grid-based combat" system—not the tactical variety, but one where you snap around a 3x3 grid to dodge enemy attacks.  
-        You can also do things like... walk... and... jump. Ok, I think I've covered all the gameplay stuff.
-    </p>
-    
-    <div class="screenshots">
-        <img src="Screenshot 2026-01-09 234217.png" alt="Screenshot 3">
-        <img src="16902103474223710208_16.jpg" alt="Screenshot 4">
-    </div>
-</div>
+        <div class="section" id="gameplay">
+            <h2>Gameplay</h2>
+            <p>Have you ever wanted a game where you do things, and more things happen? Introducing <strong>PORTALHOPPER</strong>, a 2D platformer with turn-based RPG battle mechanics. I call it a "PlatPG".</p>
+            <p>. . .</p>
+            <p>I'm joking, by the way.</p>
+            <p>. . .</p>
+            <p>But that's not all! The game also has crazy, silly, wacky, goofy, haha, funny, lol, rofl characters you can conversate with! On top of that, I made what I actually call a "grid-based combat" system—not the tactical variety, but one where you snap around a 3x3 grid to dodge enemy attacks. You can also do things like... walk... and... jump. Ok, I think I've covered all the gameplay stuff.</p>
+            <div class="screenshots">
+                <img src="Screenshot 2026-01-09 234217.png" alt="Screenshot 3">
+                <img src="16902103474223710208_16.jpg" alt="Screenshot 4">
+            </div>
+        </div>
 
-        <!-- Story Section -->
         <div class="section" id="story">
             <h2>Story</h2>
-            <p>
-               Splat, a small squid with no memory of his past, 
-              awakens in a fracturing world connected by unstable portals. 
-            </p> 
-            
-            <p>
-              Guided by a mysterious voice, he journeys through strange worlds and interdimensional markets in search of a way home. 
-              Along the way, Splat encounters powerful beings, ancient machines, and characters tied to a long-forgotten tragedy. 
-            </p> 
-            
-            </p>
+            <p>Splat, a small squid with no memory of his past, awakens in a fracturing world connected by unstable portals.</p>
+            <p>Guided by a mysterious voice, he journeys through strange worlds and interdimensional markets in search of a way home. Along the way, Splat encounters powerful beings, ancient machines, and characters tied to a long-forgotten tragedy.</p>
             <div class="screenshots">
                 <img src="sBackForest.gif" alt="Screenshot 5">
                 <img src="Screenshot 2026-01-11 014148.png" alt="Screenshot 6">
@@ -176,7 +78,7 @@
     </header>
 
     <footer>
-        2026 CD Productions · All Rights Reserved
+        2026 CD Productions · hi how are you today
     </footer>
 
 </body>
