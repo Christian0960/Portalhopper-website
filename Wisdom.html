@@ -4,7 +4,7 @@
     <link rel="icon" type="image/png" href="pixilart-drawing (23).ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTALHOPPER — tortle</title>
+    <title>PORTALHOPPER — Wisdom</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -18,8 +18,8 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding-top: 5rem;
             text-align: center;
+            padding-top: 5rem;
         }
 
         nav {
@@ -42,207 +42,92 @@
             color: #ffff00;
         }
 
-        nav a:hover {
-            color: #aca4ff;
-        }
+        nav a:hover { color: #aca4ff; }
 
-        header {
-            max-width: 800px;
-            width: 100%;
-        }
-
-        /* CLICK IMAGE */
-        .click-image {
-            margin: 3rem auto;
-            width: 320px;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .click-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* GAME SCREEN (SCALED UP) */
-        .game-wrapper {
-            position: fixed;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 640px;   /* bigger width */
-            height: 240px;  /* bigger height */
-            display: none;
-        }
-
-        /* DIALOG BOX */
-        .dialog-outer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .border-1 {
-            background: #000;
-            border-top: 4px solid #fff;
-        }
-
-        .border-2 {
-            margin: 4px;
-            border: 3px solid #fff;
-            background: #000;
-        }
-
-        .border-3 {
-            margin: 4px;
-            border: 3px solid #000;
-            background: #000;
-            display: flex;
-            padding: 14px;
-        }
-
-        .portrait {
-            width: 128px;  /* bigger portrait */
-            height: 128px;
-            background: url("tortle.png") center / contain no-repeat; /* actual image */
-            border: 2px solid #fff;
-            margin-right: 16px;
-            flex-shrink: 0;
-        }
-
-        .dialog-text {
-            font-size: 14px;  /* larger text */
-            line-height: 1.8;
-            white-space: pre-wrap;
-            max-width: 480px;
-            text-align: left;
-        }
-
-        .prompt {
-            font-size: 10px;
-            color: #aca4ff;
-            text-align: right;
-            margin-top: 6px;
-        }
-
-        footer {
-            margin-top: auto;
-            font-size: 0.6rem;
-            color: #aaa;
-            margin-top: 3rem;
-        }
+        header { max-width: 800px; width: 100%; }
+        .click-image { margin: 3rem auto; width: 320px; height: 180px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .click-image img { width: 100%; height: 100%; object-fit: contain; }
+        .game-wrapper { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); width: 640px; height: 240px; display: none; }
+        .dialog-outer { position: absolute; bottom: 0; width: 100%; }
+        .border-1 { background: #000; border-top: 4px solid #fff; }
+        .border-2 { margin: 4px; border: 3px solid #fff; background: #000; }
+        .border-3 { margin: 4px; border: 3px solid #000; background: #000; display: flex; padding: 14px; }
+        .portrait { width: 128px; height: 128px; background: url("tortle.png") center / contain no-repeat; border: 2px solid #fff; margin-right: 16px; flex-shrink: 0; }
+        .dialog-text { font-size: 14px; line-height: 1.8; white-space: pre-wrap; max-width: 480px; text-align: left; }
+        .prompt { font-size: 10px; color: #aca4ff; text-align: right; margin-top: 6px; }
+        footer { font-size: 0.6rem; color: #aaa; margin-top: 3rem; }
     </style>
 </head>
-
 <body>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="Demo.html">Download Demo</a>
-    <a href="Wisdom.html">Wisdom</a>
-</nav>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Demo.html">Download the demo</a>
+        <a href="Wisdom.html">Wisdom</a>
+        <a href="About.html">About</a>
+    </nav>
 
-<header>
-    <h1>you probably should not click this tortle</h1>
+    <header>
+        <h1>you probably should not click this tortle</h1>
 
-    <div class="click-image" onclick="startDialog()">
-        <img src="tortle.png" alt="Tortle">
-    </div>
-</header>
+        <div class="click-image" onclick="startDialog()">
+            <img src="tortle.png" alt="Tortle">
+        </div>
+    </header>
 
-<!-- GAME / DIALOG -->
-<div class="game-wrapper" id="game">
-    <div class="dialog-outer border-1">
-        <div class="border-2">
-            <div class="border-3">
-                <div class="portrait"></div>
-                <div>
-                    <div class="dialog-text" id="dialogText"></div>
-                    <div class="prompt">[ press enter ]</div>
+    <div class="game-wrapper" id="game">
+        <div class="dialog-outer border-1">
+            <div class="border-2">
+                <div class="border-3">
+                    <div class="portrait"></div>
+                    <div>
+                        <div class="dialog-text" id="dialogText"></div>
+                        <div class="prompt">[ press enter ]</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<footer>
-    2026 CD Productions · hi how are you today
-</footer>
+    <footer>
+        2026 CD Productions · hi how are you today
+    </footer>
 
-<script>
-    const dialog = [
-        "hi",
-        "my name is tortle",
-        "i am a digital avatar that represents the creator of this website",
-        "he wanted me to ask you not to click random things",
-        "so can you please not do that",
-        "its lowkey annoying",
-        "because whenever you click something",
-        "all the little elves inside your computer have to build the page",
-        "so its really an inconvenience for everyone",
-        "so respectfully please stop",
-    ];
-
-    let index = 0;
-    let charIndex = 0;
-    let typing = false;
-    let active = false;
-    let typedText = "";
-
-    function startDialog() {
-        index = 0;
-        charIndex = 0;
-        typedText = "";
-        active = true;
-        document.getElementById("game").style.display = "block";
-        document.getElementById("dialogText").textContent = "";
-        typeNextChar();
-    }
-
-    function typeNextChar() {
-        if (!active) return;
-
-        typing = true;
-        const message = dialog[index];
-
-        if (charIndex < message.length) {
-            typedText += message.charAt(charIndex);
-            document.getElementById("dialogText").textContent = typedText;
-            charIndex++;
-            setTimeout(typeNextChar, 30);
-        } else {
-            typing = false;
+    <script>
+        const dialog = [
+            "hi","my name is tortle","i am a digital avatar that represents the creator of this website",
+            "he wanted me to ask you not to click random things","so can you please not do that",
+            "its lowkey annoying","because whenever you click something",
+            "all the little elves inside your computer have to build the page",
+            "so its really an inconvenience for everyone","so respectfully please stop",
+        ];
+        let index=0,charIndex=0,typing=false,active=false,typedText="";
+        function startDialog() {
+            index=0; charIndex=0; typedText=""; active=true;
+            document.getElementById("game").style.display="block";
+            document.getElementById("dialogText").textContent="";
+            typeNextChar();
         }
-    }
-
-    document.addEventListener("keydown", e => {
-        if (!active || e.key !== "Enter") return;
-
-        if (typing) {
-            typedText = dialog[index];
-            document.getElementById("dialogText").textContent = typedText;
-            typing = false;
-            return;
+        function typeNextChar() {
+            if(!active) return;
+            typing=true;
+            const message=dialog[index];
+            if(charIndex<message.length){
+                typedText+=message.charAt(charIndex);
+                document.getElementById("dialogText").textContent=typedText;
+                charIndex++;
+                setTimeout(typeNextChar,30);
+            }else typing=false;
         }
-
-        index++;
-        if (index >= dialog.length) {
-            document.getElementById("game").style.display = "none";
-            active = false;
-            return;
-        }
-
-        charIndex = 0;
-        typedText = "";
-        document.getElementById("dialogText").textContent = "";
-        typeNextChar();
-    });
-</script>
+        document.addEventListener("keydown",e=>{
+            if(!active||e.key!=="Enter") return;
+            if(typing){typedText=dialog[index]; document.getElementById("dialogText").textContent=typedText; typing=false; return;}
+            index++;
+            if(index>=dialog.length){document.getElementById("game").style.display="none"; active=false; return;}
+            charIndex=0; typedText=""; document.getElementById("dialogText").textContent=""; typeNextChar();
+        });
+    </script>
 
 </body>
 </html>
-
