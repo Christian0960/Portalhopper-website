@@ -19,19 +19,49 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 2rem 1rem;
+            text-align: center;
+            padding-top: 5rem;
+            padding-bottom: 2rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #555;
+            border-bottom: 2px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            padding: 0.8rem 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
+            color: #ffff00;
+        }
+
+        nav a:hover {
+            color: #aca4ff;
         }
 
         h1 {
             font-size: 1.4rem;
             color: #ffff00;
             margin-bottom: 3rem;
-            text-align: center;
+            margin-top: 1rem;
         }
 
         .soundtrack-container {
             max-width: 800px;
             width: 100%;
+            padding: 0 1rem;
         }
 
         .track {
@@ -73,7 +103,6 @@
             height: 40px;
         }
 
-        /* Custom audio player styling */
         audio::-webkit-media-controls-panel {
             background-color: #000;
         }
@@ -89,6 +118,14 @@
             line-height: 1.5;
             margin-top: 1rem;
             color: #ccc;
+            text-align: left;
+        }
+
+        /* SNOWBALL */
+        .cat-photo {
+            margin-top: 3rem;
+            max-width: 150px;
+            border: none;
         }
 
         footer {
@@ -109,6 +146,13 @@
     </style>
 </head>
 <body>
+
+    <nav>
+        <a href="Index.html">Home</a>
+        <a href="Demo.html">Download the demo</a>
+        <a href="Wisdom.html">Wisdom</a>
+        <a href="about.html">About</a>
+    </nav>
 
     <h1>PORTALHOPPER SOUNDTRACK</h1>
 
@@ -147,7 +191,7 @@
             </div>
         </div>
 
-                <div class="track">
+        <div class="track">
             <div class="track-header">
                 <div class="track-info">
                     <div class="track-title">Cave of Ice and Snow</div>
@@ -163,7 +207,7 @@
             </div>
         </div>
 
-                <div class="track">
+        <div class="track">
             <div class="track-header">
                 <div class="track-info">
                     <div class="track-title">Evil Snow Wizard of Death and Destruction</div>
@@ -179,7 +223,7 @@
             </div>
         </div>
 
-                        <div class="track">
+        <div class="track">
             <div class="track-header">
                 <div class="track-info">
                     <div class="track-title">Business Sprinkled With Jolly</div>
@@ -195,7 +239,7 @@
             </div>
         </div>
 
-                <div class="track">
+        <div class="track">
             <div class="track-header">
                 <div class="track-info">
                     <div class="track-title">Petrichor</div>
@@ -211,7 +255,7 @@
             </div>
         </div>
 
-                        <div class="track">
+        <div class="track">
             <div class="track-header">
                 <div class="track-info">
                     <div class="track-title">Business With a Hint of Petrichor</div>
@@ -227,7 +271,7 @@
             </div>
         </div>
 
-                        <div class="track">
+        <div class="track">
             <div class="track-header">
                 <div class="track-info">
                     <div class="track-title">Closing Time</div>
@@ -259,7 +303,7 @@
             </div>
         </div>
 
-                        <div class="track">
+        <div class="track">
             <div class="track-header">
                 <div class="track-info">
                     <div class="track-title">Shimmer in the Void</div>
@@ -276,6 +320,8 @@
         </div>
 
     </div>
+
+    <img class="cat-photo" src="sprite-animation (1).gif" alt="Snowball">
 
     <footer>
         2026 CD Productions · Hi how are you today
